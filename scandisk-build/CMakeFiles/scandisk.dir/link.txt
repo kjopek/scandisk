@@ -1,1 +1,0 @@
-/usr/bin/cc      CMakeFiles/scandisk.dir/benchmark.c.o CMakeFiles/scandisk.dir/scandisk.c.o CMakeFiles/scandisk.dir/scan.c.o  -o scandisk  

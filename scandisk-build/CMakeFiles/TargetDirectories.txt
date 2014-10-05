@@ -1,1 +1,0 @@
-/home/kj/projects/scandisk/scandisk-build/CMakeFiles/scandisk.dir
