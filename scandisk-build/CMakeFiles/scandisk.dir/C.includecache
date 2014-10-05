@@ -1,0 +1,40 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/kj/projects/scandisk/benchmark.h
+
+/home/kj/projects/scandisk/scan.h
+
+/home/kj/projects/scandisk/scandisk.c
+stdio.h
+-
+stdlib.h
+-
+sys/types.h
+-
+sys/stat.h
+-
+sys/disk.h
+-
+sys/ioctl.h
+-
+signal.h
+-
+unistd.h
+-
+fcntl.h
+-
+getopt.h
+-
+string.h
+-
+benchmark.h
+/home/kj/projects/scandisk/benchmark.h
+scan.h
+/home/kj/projects/scandisk/scan.h
+
