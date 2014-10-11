@@ -15,10 +15,13 @@
 #include "benchmark.h"
 #include "scan.h"
 
+int run_benchmark = 0;
+
 static struct option longopts[] = {
-    {"device",     required_argument,      NULL,           'd'},
-    {"help",       no_argument,            NULL,           'h'},
-    {NULL,         0,                      NULL,           0}
+    {"benchmark",  no_argument, &run_benchmark, 0},
+    {"device",     required_argument, NULL, 'd'},
+    {"help",       no_argument, NULL, 'h'},
+    {NULL,         0, NULL, 0}
 };
 
 void usage(void)
@@ -49,7 +52,7 @@ int main(int argc, char ** argv)
         }
     }
 
-    if ( (fd = open(devname, O_RDWR | O_DIRECT | O_SYNC)) < 0) {
+    if ((fd = open(devname, O_RDWR | O_DIRECT | O_SYNC)) < 0) {
         perror("open");
         return 1;
     }
@@ -74,7 +77,9 @@ int main(int argc, char ** argv)
     fprintf(stderr, "\tdevice size: %lu\n", mediasize);
     fprintf(stderr, "\tsector size: %u\n", sectorsize);
 
-    //benchmark(fd, mediasize, blocksize);
+    if (run_benchmark != 0) {
+        benchmark(fd, mediasize, blocksize);
+    }
 
     fprintf(stderr, "starting scan\n");
 
